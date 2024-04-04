@@ -64,7 +64,7 @@ class $modify(MyLayer, PauseLayer) {
 
 			auto qstfont = menu->getChildByID("quest-title-label");
 			qstfont->setAnchorPoint(CCPoint(0.5, 0.f));
-			qstfont->setPosition(CCPoint(winsize.width/2+140.f, 280.f));
+			qstfont->setPosition(CCPoint(winsize.width/2+140.f, 200.f));
 
 			//two buttons
 			menu->getChildByID("layer-menu-scroll-buttons")->setVisible(false);
