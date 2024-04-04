@@ -6,6 +6,7 @@
 	"name": "BetterPause ScrollSlayer",
 	"developer": "Naxrin",
 	"description": "This mod replaces the stupid ScrollLayer Buttons of BetterPause with just general buttons placed in the Pause Menu.",
+	"repository":"https://github.com/Naxrin/BetterPause-ScrollSlayer",
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
