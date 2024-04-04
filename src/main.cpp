@@ -30,7 +30,7 @@ class $modify(PauseLayer) {
 			if (Mod::get()->getSettingValue<bool>("show-info")){
 				auto infoImage = cocos2d::CCSprite::createWithSpriteFrameName("GJ_infoIcon_001.png");
 				//infoImage->setScale(0.6);
-				auto infoButton = CCMenuItemSpriteExtra::create(infoImage, pl, (cocos2d::SEL_MenuHandler)&onInfoAlert);
+				auto infoButton = CCMenuItemSpriteExtra::create(infoImage, pl, menu_selector(onInfoAlert));
 				eyes->addChild(infoButton);
 			}
 			else{
@@ -118,7 +118,7 @@ class $modify(PauseLayer) {
 			if (Mod::get()->getSettingValue<bool>("show-comments")){
 				auto showCommentsImage = cocos2d::CCSprite::createWithSpriteFrameName("GJ_chatBtn_001.png");
 				showCommentsImage->setScale(0.7f);
-				auto showCommentsButton = CCMenuItemSpriteExtra::create(showCommentsImage, pl, (cocos2d::SEL_MenuHandler)&onLevelInfoLayer);			
+				auto showCommentsButton = CCMenuItemSpriteExtra::create(showCommentsImage, pl, menu_selector(onLevelInfoLayer));			
 				showCommentsButton->setPosition(CCPoint(commonx, 35.f));			
 				newmenu->addChild(showCommentsButton);
 			}
