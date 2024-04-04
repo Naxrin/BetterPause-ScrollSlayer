@@ -1,0 +1,34 @@
+{
+	"geode": "2.0.0-beta.23",
+	"gd": {"win": "2.204", "android": "2.205", "mac":"2.200"},
+	"version": "v1.0.0",
+	"id": "naxrin.betterpause_scrollslayer",
+	"name": "BetterPause ScrollSlayer",
+	"developer": "Naxrin",
+	"description": "This mod replaces the stupid ScrollLayer Buttons of BetterPause with just general buttons placed in the Pause Menu.",
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": "v1.0.0"			
+		}],
+	"settings":{
+		"level-edit": {
+            "name": "Level Edit",
+            "description": "Don't you know what is Level Edit Hack?",
+            "type": "bool",
+            "default": true
+		},
+		"show-comments": {
+            "name": "Show Comments",
+            "description": "Conjure the Comments button from LevelInfoLayer, it will go back to level info page when you quit the level.",
+            "type": "bool",
+            "default": true
+		},
+		"show-info": {
+            "name": "Show Info Button",
+            "description": "Let you see how many icons are driven to explode (and more) right here.",
+            "type": "bool",
+            "default": true
+		}
+	}
+}
