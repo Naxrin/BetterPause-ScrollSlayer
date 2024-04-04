@@ -50,9 +50,21 @@ class $modify(MyLayer, PauseLayer) {
 			auto points = star->getPosition();
 			star->setPosition(CCPoint(points.x, points.y+4));
 
+			CCNode *fonts;
+			CCPoint fp;
+			for (int i=6; i<10; i++){
+			fonts = static_cast<CCNode*>(menu->getChildren()->objectAtIndex(i));
+			fp = fonts->getPosition();
+			fonts->setPosition(CCPoint(fp.x, fp.y-5.f));
+			}
+
 			auto volfont = menu->getChildByID("volume-settings-title-label");
 			volfont->setAnchorPoint(CCPoint(0.5, 0.f));
-			volfont->setPosition(CCPoint(winsize.width-145.f, 280.f));
+			volfont->setPosition(CCPoint(winsize.width/2+140.f, 280.f));
+
+			auto qstfont = menu->getChildByID("quest-title-label");
+			qstfont->setAnchorPoint(CCPoint(0.5, 0.f));
+			qstfont->setPosition(CCPoint(winsize.width/2+140.f, 280.f));
 
 			//two buttons
 			menu->getChildByID("layer-menu-scroll-buttons")->setVisible(false);
