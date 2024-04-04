@@ -1,5 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PauseLayer.hpp>
+#include <Geode/modify/PlayLayer.hpp>
+#include <Geode/modify/LevelPage.hpp>
 #include <Geode/modify/InfoLayer.hpp>
 #include <Geode/cocos/CCDirector.h>
 
@@ -25,11 +27,16 @@ class $modify(PauseLayer) {
 			eyes->setAnchorPoint(CCPoint(0.f, 0.f));
 			eyes->setScale(0.7);
 
-			auto infoImage = cocos2d::CCSprite::createWithSpriteFrameName("GJ_infoIcon_001.png");
-			//infoImage->setScale(0.6);
-			auto infoButton = CCMenuItemSpriteExtra::create(infoImage, pl, (cocos2d::SEL_MenuHandler)&onInfoAlert);
-			eyes->addChild(infoButton);
-			
+			if (Mod::get()->getSettingValue<bool>("show-info")){
+				auto infoImage = cocos2d::CCSprite::createWithSpriteFrameName("GJ_infoIcon_001.png");
+				//infoImage->setScale(0.6);
+				auto infoButton = CCMenuItemSpriteExtra::create(infoImage, pl, (cocos2d::SEL_MenuHandler)&onInfoAlert);
+				eyes->addChild(infoButton);
+			}
+			else{
+				static_cast<CCNode* >(eyes->getChildren()->objectAtIndex(1))->setPosition(0.f, 0.f);
+				
+			}
 			static_cast<CCNode* >(eyes->getChildren()->objectAtIndex(0))->setVisible(false);
 			static_cast<CCNode* >(eyes->getChildren()->objectAtIndex(2))->setVisible(false);
 			static_cast<CCNode* >(eyes->getChildren()->objectAtIndex(3))->setVisible(false);
